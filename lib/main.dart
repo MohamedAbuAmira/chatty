@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
       title: 'Chatter',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Material App Bar'),
+          title: Text('first project '),
         ),
         body: Center(
           child: Container(
