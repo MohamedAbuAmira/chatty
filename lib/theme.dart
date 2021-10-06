@@ -30,11 +30,11 @@ abstract class AppTheme {
   static final visualDensity = VisualDensity.adaptivePlatformDensity;
 
   /// Light theme and its settings.
-  static ThemeData light(ThemeData theme) => ThemeData(
+  static ThemeData light() => ThemeData(
         brightness: Brightness.light,
         accentColor: accentColor,
         visualDensity: visualDensity,
-        textTheme: GoogleFonts.mulishTextTheme(theme.textTheme)
+        textTheme: GoogleFonts.mulishTextTheme()
             .apply(bodyColor: AppColors.textDark),
         backgroundColor: _LightColors.background,
         scaffoldBackgroundColor: _LightColors.background,
@@ -46,11 +46,11 @@ abstract class AppTheme {
       );
 
   /// Dark theme and its settings.
-  static ThemeData dark(ThemeData theme) => ThemeData(
+  static ThemeData dark() => ThemeData(
         brightness: Brightness.dark,
         accentColor: accentColor,
         visualDensity: visualDensity,
-        textTheme: GoogleFonts.interTextTheme(theme.textTheme)
+        textTheme: GoogleFonts.interTextTheme()
             .apply(bodyColor: AppColors.textLigth),
         backgroundColor: _DarkColors.background,
         scaffoldBackgroundColor: _DarkColors.background,
