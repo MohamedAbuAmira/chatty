@@ -1,13 +1,12 @@
-import 'package:chatty/helpers.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:chatty/pages/messages_page.dart';
 import 'package:chatty/pages/contacts_page.dart';
 import 'package:chatty/pages/notifications_page.dart';
 import 'package:chatty/pages/calls_page.dart';
+import 'package:chatty/widgets/widgets.dart';
 import 'package:chatty/theme.dart';
-import 'package:chatty/widgets/avatar.dart';
-import 'package:chatty/widgets/icon_buttons.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:chatty/helpers.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);

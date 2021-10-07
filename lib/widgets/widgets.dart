@@ -1,1 +1,2 @@
-import 'avatar.dart';
+export 'avatar.dart';
+export 'icon_buttons.dart';
