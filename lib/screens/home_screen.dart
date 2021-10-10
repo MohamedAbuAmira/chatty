@@ -32,6 +32,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: Theme.of(context).iconTheme,
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
@@ -96,41 +97,51 @@ class _bottomNavigationBarState extends State<_bottomNavigationBar> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      top: false,
-      bottom: true,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          _bottomNavigationItem(
-            index: 0,
-            label: "Messages",
-            icon: CupertinoIcons.bubble_left_bubble_right_fill,
-            isSelected: selectedIndex == 0,
-            onTap: handleItemSelected,
+    final brightness = Theme.of(context).brightness;
+
+    return Card(
+      color: (brightness == Brightness.light) ? Colors.transparent : null,
+      elevation: 0,
+      margin: const EdgeInsets.all(0),
+      child: SafeArea(
+        top: false,
+        bottom: true,
+        child: Padding(
+          padding: const EdgeInsets.only(top: 16.0, left: 8.0, right: 8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              _bottomNavigationItem(
+                index: 0,
+                label: "Messages",
+                icon: CupertinoIcons.bubble_left_bubble_right_fill,
+                isSelected: selectedIndex == 0,
+                onTap: handleItemSelected,
+              ),
+              _bottomNavigationItem(
+                index: 1,
+                label: "Notifications",
+                icon: CupertinoIcons.bell_solid,
+                isSelected: selectedIndex == 1,
+                onTap: handleItemSelected,
+              ),
+              _bottomNavigationItem(
+                index: 2,
+                label: "Calls",
+                icon: CupertinoIcons.phone_fill,
+                isSelected: selectedIndex == 2,
+                onTap: handleItemSelected,
+              ),
+              _bottomNavigationItem(
+                index: 3,
+                label: "Contacts",
+                icon: CupertinoIcons.person_2_fill,
+                isSelected: selectedIndex == 3,
+                onTap: handleItemSelected,
+              ),
+            ],
           ),
-          _bottomNavigationItem(
-            index: 1,
-            label: "Notifications",
-            icon: CupertinoIcons.bell_solid,
-            isSelected: selectedIndex == 1,
-            onTap: handleItemSelected,
-          ),
-          _bottomNavigationItem(
-            index: 2,
-            label: "Calls",
-            icon: CupertinoIcons.phone_fill,
-            isSelected: selectedIndex == 2,
-            onTap: handleItemSelected,
-          ),
-          _bottomNavigationItem(
-            index: 3,
-            label: "Contacts",
-            icon: CupertinoIcons.person_2_fill,
-            isSelected: selectedIndex == 3,
-            onTap: handleItemSelected,
-          ),
-        ],
+        ),
       ),
     );
   }
@@ -161,7 +172,7 @@ class _bottomNavigationItem extends StatelessWidget {
         onTap(index);
       },
       child: SizedBox(
-        height: 70,
+        height: 60,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
