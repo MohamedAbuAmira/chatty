@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
           .light(), // default theme according the platform mode (dark or light)
       darkTheme: AppTheme
           .dark(), // default theme according the platform mode (dark or light)
-      themeMode: ThemeMode.dark, //the theme set always for app
+      // themeMode: ThemeMode.dark, //the theme set always for app
       home: HomeScreen(),
     );
   }

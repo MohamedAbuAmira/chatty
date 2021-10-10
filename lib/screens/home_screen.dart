@@ -1,9 +1,6 @@
+import 'package:chatty/pages/pages.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:chatty/pages/messages_page.dart';
-import 'package:chatty/pages/contacts_page.dart';
-import 'package:chatty/pages/notifications_page.dart';
-import 'package:chatty/pages/calls_page.dart';
 import 'package:chatty/widgets/widgets.dart';
 import 'package:chatty/theme.dart';
 import 'package:chatty/helpers.dart';
@@ -36,6 +33,7 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
+        leadingWidth: 54,
         title: ValueListenableBuilder(
             valueListenable: title,
             builder: (BuildContext context, String value, _) {
@@ -53,7 +51,6 @@ class HomeScreen extends StatelessWidget {
             child: Avatar.small(url: Helpers.randomPicutreUrl()),
           )
         ],
-        leadingWidth: 54,
         leading: Align(
           alignment: Alignment.centerRight,
           child: IconBackground(
@@ -125,6 +122,16 @@ class _bottomNavigationBarState extends State<_bottomNavigationBar> {
                 isSelected: selectedIndex == 1,
                 onTap: handleItemSelected,
               ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                child: GlowingActionButton(
+                  color: AppColors.secondary,
+                  icon: CupertinoIcons.add,
+                  onPressed: () {
+                    print('TODO: Glowing action button');
+                  },
+                ),
+              ),
               _bottomNavigationItem(
                 index: 2,
                 label: "Calls",
@@ -172,7 +179,7 @@ class _bottomNavigationItem extends StatelessWidget {
         onTap(index);
       },
       child: SizedBox(
-        height: 60,
+        width: 70,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
