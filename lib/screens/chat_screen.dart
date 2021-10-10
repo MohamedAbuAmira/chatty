@@ -90,7 +90,7 @@ class _DemoMessageList extends StatelessWidget {
           ),
           _MessageOwnTile(
             message: 'YAY!!!',
-            messageDate: '12:03 PM',
+            messageDate: '12:04 PM',
           ),
         ],
       ),
